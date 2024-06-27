@@ -5,7 +5,7 @@ import pendulum
 from airflow.operators.empty import EmptyOperator
 
 with DAG(
-    dag_id="test_bash_operator",
+    dag_id="dags_conn_test",
     # 이덱은 매일 0시 0분에 시작
     schedule="0 0 * * *",
     # 덱이 언제 부터 돌지 TZ=타임존
