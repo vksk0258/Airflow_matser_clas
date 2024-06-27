@@ -19,12 +19,12 @@ with DAG(
 
     t1_APPLE = BashOperator(
         task_id='t1_APPLE',
-        bash_command="opt/airflow/plugins/shell/select_fruit.sh APPLE"
+        bash_command="/opt/airflow/plugins/shell/select_fruit.sh APPLE"
     )
 
     t2_GRAPE = BashOperator(
         task_id='t2_GRAPE',
-        bash_command="opt/airflow/plugins/shell/select_fruit.sh GRAPE"
+        bash_command="/opt/airflow/plugins/shell/select_fruit.sh GRAPE"
     )
 
     t1_APPLE >> t2_GRAPE
