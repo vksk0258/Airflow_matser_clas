@@ -18,7 +18,7 @@ with DAG(
 
     t1_APPLE = BashOperator(
         task_id='t1_APPLE',
-        bash_command="/opt/airflow/plugins/shell/select_fruit.sh APPLE"
+        bash_command="/home/vksk0258/Airflow_matser_clas/plugins/select_fruit.sh APPLE"
     )
 
     t2_GRAPE = BashOperator(
