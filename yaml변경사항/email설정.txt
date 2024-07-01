@@ -1,0 +1,7 @@
+jeqb hrdk hhjp vbhn
+
+AIRFLOW__SMTP__SMTP_HOST: 'smtp.gmail.cml'
+AIRFLOW__SMTP__SMTP_USER: 'vksk0258@gmail.com'
+AIRFLOW__SMTP__SMTP_PASSWORD: 'jeqbhrdkhhjpvbhn'
+AIRFLOW__SMTP__SMTP_PORT: 587
+AIRFLOW__SMTP__SMTP_MAIL_FROM: 'vksk0258@gmail.com'
