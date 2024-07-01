@@ -4,7 +4,7 @@ import pendulum
 import random
 from airflow.operators.python import PythonOperator
 #에어플로우는 plugins까지 패스로 받아지기때문에 이렇게 깃 푸시를 하면 에어플로우에서 에러가 난다.
-from plugins.common.common_func import get_sftp
+from common.common_func import get_sftp
 
 with DAG(
     dag_id="dags_python_import_func",
