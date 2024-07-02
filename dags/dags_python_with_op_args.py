@@ -7,7 +7,7 @@ from airflow.operators.python import PythonOperator
 from common.common_func import regist
 
 with DAG(
-    dag_id="dags_python_import_func",
+    dag_id="dags_python_with_op_args",
     # 이덱은 매일 6시 30분에 시작
     schedule="30 6 * * *",
     # 덱이 언제 부터 돌지 TZ=타임존
