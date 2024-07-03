@@ -31,8 +31,8 @@ with DAG(
         print(kwargs)
         print('ds:' + kwargs['ds'])
         print('ts:' + kwargs['ts'])
-        print('date_interval_start' + str(kwargs['date_interval_start']))
-        print('date_interval_end' + str(kwargs['date_interval_end']))
+        print('date_interval_start' + str(kwargs['data_interval_start']))
+        print('date_interval_end' + str(kwargs['data_interval_end']))
         print('task_instance:' + str(kwargs['ti']))
 
     python_t1 >> python_function2()
