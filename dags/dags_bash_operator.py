@@ -18,6 +18,7 @@ with DAG(
 ) as dag:
     run_this = BashOperator(
         # 객체명과 task id 는 같게 가는게 좋다
+
         task_id="run_this",
         bash_command="echo whoami",
     )
