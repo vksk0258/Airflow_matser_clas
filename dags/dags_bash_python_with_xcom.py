@@ -22,9 +22,9 @@ with DAG(
     bash_pull = BashOperator(
         task_id='bash_pull',
         env={
-            'status' : '{{ ti.xcom_pull(task_id="python_push")["status"] }}',
-            'data' : '{{ ti.xcom_pull(task_id="python_push")["data"] }}',
-            'option_cnt' : '{{ ti.xcom_pull(task_id="python_push")["option_cnt"] }}'
+            'status' : '{{ ti.xcom_pull(task_ids="python_push")["status"] }}',
+            'data' : '{{ ti.xcom_pull(task_ids="python_push")["data"] }}',
+            'option_cnt' : '{{ ti.xcom_pull(task_ids="python_push")["option_cnt"] }}'
         },
         bash_command='echo $status && echo $data && echo $option_cnt'
     )
@@ -33,7 +33,7 @@ with DAG(
     bash_push = BashOperator(
         task_id='bash_push',
         bash_command='echo PUSH_START'
-                     '{{ ti.xcom_push(task_id="bash_pushed", value=200) }} && '
+                     '{{ ti.xcom_push(task_ids="bash_pushed", value=200) }} && '
                      'echo PUSH_END'
     )
 
