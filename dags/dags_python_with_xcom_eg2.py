@@ -3,7 +3,6 @@ import datetime
 import pendulum
 from airflow.operators.python import PythonOperator
 from airflow.decorators import task
-from pygments.lexers import q
 
 with DAG(
     dag_id="dags_python_with_xcom_eg2",
@@ -25,6 +24,8 @@ with DAG(
         ti = kwargs['ti']
         value1 = ti.xcom_pull(task_ids='python_xcom_push_by_return')
         print('xcom_pull_1 메서드로 직접 찾은 리턴 값: '+ value1)
+
+
 
     @task(task_id='python_xcom_pull_2')
     def xcom_pull_2(status, **kwargs):
