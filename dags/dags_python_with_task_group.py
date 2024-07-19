@@ -21,6 +21,7 @@ with DAG(
         msg = kwargs.get('msg') or ''
         print(msg)
 
+    # task_id가 다르더라도 그룹이 가능하면 사용할 수 있다!
     @task_group(group_id='firs_group')
     def group_1():
         '''task_group 데커레이터를 이용한 첫 번째 그룹입니다.'''
