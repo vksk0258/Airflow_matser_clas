@@ -14,7 +14,7 @@ with DAG(
     # 1월 1일부터 3월 1일까지 누락된 덱을 한번에 돌아가게 된다 3월 1일에 웬만하면 false
     catchup=False,
     dagrun_timeout=datetime.timedelta(minutes=60),
-    tags=["인프런",'python','그룹']
+    tags=["인프런",'python','라벨']
 ) as dag:
     empty_1 = EmptyOperator(task_id="Empty_1")
 
