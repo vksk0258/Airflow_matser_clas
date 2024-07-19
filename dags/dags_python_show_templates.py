@@ -11,7 +11,9 @@ with DAG(
     start_date=pendulum.datetime(2024, 7, 1, tz="Asia/Seoul"),
     # 캐치업 배치 중간에 누락된 구간을 돌릴지 말지
     # 1월 1일부터 3월 1일까지 누락된 덱을 한번에 돌아가게 된다 3월 1일에 웬만하면 false
-    catchup=True
+    catchup=True,
+    dagrun_timeout=datetime.timedelta(minutes=60),
+    tags=["인프런"]
 
     
 ) as dag:

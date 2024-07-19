@@ -13,7 +13,8 @@ with DAG(
     # 캐치업 배치 중간에 누락된 구간을 돌릴지 말지
     # 1월 1일부터 3월 1일까지 누락된 덱을 한번에 돌아가게 된다 3월 1일에 왠만하면 false
     catchup=False,
-    tags=["옵션", "태그"]
+    dagrun_timeout=datetime.timedelta(minutes=60),
+    tags=["인프런"]
 ) as dag:
     def python_function1(start_date, end_date, **kwargs):
         print(start_date)
