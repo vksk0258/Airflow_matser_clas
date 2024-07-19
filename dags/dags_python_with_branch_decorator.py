@@ -7,7 +7,7 @@ from airflow.operators.python import PythonOperator
 with DAG(
         dag_id="dags_python_with_branch_decorator",
         # 이덱은 매일 6시 30분에 시작
-        schedule="0 0 0 * *",
+        schedule="0 0 * * *",
         # 덱이 언제 부터 돌지 TZ=타임존
         start_date=pendulum.datetime(2024, 7, 1, tz="Asia/Seoul"),
         # 캐치업 배치 중간에 누락된 구간을 돌릴지 말지
