@@ -5,7 +5,6 @@ from airflow.operators.python import PythonOperator
 from airflow.decorators import task
 from airflow.operators.bash import BashOperator
 from airflow.exceptions import AirflowException
-from airflow.utils.trigger_rule import TriggerRule
 
 with DAG(
     dag_id="dags_python_with_trigger_rule_eg1",
