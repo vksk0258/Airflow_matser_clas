@@ -31,7 +31,7 @@ with DAG(
     def python_upstream_2():
         print('정상처리')
 
-    @task(task_id='bash_downstream_1',trigger_rule='all_done')
+    @task(task_id='python_downstream_1',trigger_rule='all_done')
     def python_downstream_1():
         print('정상처리')
 
