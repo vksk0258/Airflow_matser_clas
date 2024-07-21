@@ -7,7 +7,8 @@ with DAG(
     dag_id='dags_trigger_dag_run_operator',
     start_date=pendulum.datetime(2023,4,1, tz='Asia/Seoul'),
     schedule='30 9 * * *',
-    catchup=False
+    catchup=False,
+    tags=["인프런", 'python', '트리거']
 ) as dag:
 
     start_task = BashOperator(
