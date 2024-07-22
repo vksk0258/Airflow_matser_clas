@@ -8,7 +8,8 @@ with DAG(
         dag_id='dags_simple_http_operator',
         start_date=pendulum.datetime(2023, 4, 1, tz='Asia/Seoul'),
         catchup=False,
-        schedule=None
+        schedule=None,
+        tags=["인프런", 'python', 'api', 'http']
 ) as dag:
     '''서울시 공공자전거 대여소 정보'''
     tb_cycle_station_info = SimpleHttpOperator(
