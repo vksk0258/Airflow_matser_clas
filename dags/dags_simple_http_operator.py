@@ -15,7 +15,7 @@ with DAG(
     realtime_position_info = SimpleHttpOperator(
         task_id='tb_cycle_station_info',
         http_conn_id='openapi.seoul.go.kr',
-        endpoint='{{var.value.apikey_openapi_seoul_go_kr}}/json/realtimePosition/0/5/1호선',
+        endpoint='{{var.value.apikey_openapi_seoul_go_kr}}/json/realtimePosition/0/1/1호선',
         method='GET',
         headers={'Content-Type': 'application/json',
                  'charset': 'utf-8',
