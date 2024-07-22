@@ -11,11 +11,11 @@ with DAG(
         schedule=None,
         tags=["인프런",'python','api','공공데이터']
 ) as dag:
-    '''실시간 지하철 위치 정보'''
-    realtime_position_info = SimpleHttpOperator(
+    '''서울시 위생업소 전체 행정처분내역 현황'''
+    SeoulAdminMesure_info = SimpleHttpOperator(
         task_id='tb_cycle_station_info',
         http_conn_id='openapi.seoul.go.kr',
-        endpoint='{{var.value.apikey_openapi_seoul_go_kr}}/json/realtimePosition/0/5/1호선',
+        endpoint='{{var.value.apikey_openapi_seoul_go_kr}}/json/SeoulAdminMesure/1/5',
         method='GET',
         headers={'Content-Type': 'application/json',
                  'charset': 'utf-8',
@@ -27,11 +27,11 @@ with DAG(
     @task(task_id='python_2')
     def python_2(**kwargs):
         ti = kwargs['ti']
-        rslt = ti.xcom_pull(task_ids='realtime_position_info')
+        rslt = ti.xcom_pull(task_ids='SeoulAdminMesure')
         import json
         from pprint import pprint
 
         pprint(json.loads(rslt))
 
 
-    realtime_position_info >> python_2()
+    SeoulAdminMesure_info >> python_2()
