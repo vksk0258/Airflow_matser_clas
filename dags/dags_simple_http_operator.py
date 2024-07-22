@@ -31,7 +31,7 @@ with DAG(
         import json
         from pprint import pprint
 
-        pprint(json.dupms(rslt))
+        pprint(json.dumps(rslt))
 
 
     SeoulAdminMesure_info >> python_2()
