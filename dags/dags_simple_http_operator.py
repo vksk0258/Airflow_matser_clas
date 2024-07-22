@@ -8,7 +8,8 @@ with DAG(
         dag_id='dags_simple_http_operator',
         start_date=pendulum.datetime(2023, 4, 1, tz='Asia/Seoul'),
         catchup=False,
-        schedule=None
+        schedule=None,
+        tags=["인프런",'python','api','공공데이터']
 ) as dag:
     '''실시간 지하철 위치 정보'''
     realtime_position_info = SimpleHttpOperator(
