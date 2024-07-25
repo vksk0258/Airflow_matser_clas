@@ -8,7 +8,7 @@ def snowflake_conn_test():
     connection = snowflake_hook.get_conn()
     cursor = connection.cursor()
 
-    result = cursor.execute("select * from PILOTDB.AIRFLOW.FINANCIAL_SC where ENTITY_NAME = 'Amalgamated Bank' limit 100;")
+    result = str(cursor.execute("select * from PILOTDB.AIRFLOW.FINANCIAL_SC where ENTITY_NAME = 'Amalgamated Bank' limit 100;"))
     cursor.close()
     connection.close()
     return result
