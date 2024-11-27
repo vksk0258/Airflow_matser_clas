@@ -20,13 +20,13 @@ with DAG(
 
     bash_var_1 = BashOperator(
         task_id="bash_var_1",
-        bash_command=f"echo variable: {var_value}",
+        bash_command=f"echo variable: {var_value}"
     )
 
     bash_var_2 = BashOperator(
         task_id="bash_var_2",
         # 스케쥴러의 부하를 줄이기위해 템플릿 문법으로 전역변수를 가져오는 것을 추천함
-        bash_command="echo variable: {{ var.value.sample_key }}",
+        bash_command=var_value
     )
 
     bash_var_1 >> bash_var_2
