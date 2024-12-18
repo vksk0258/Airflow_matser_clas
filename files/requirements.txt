@@ -1,0 +1,8 @@
+--constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.10.1/constraints-3.11.txt"
+
+apache-airflow-providers-oracle
+apache-airflow-providers-snowflake
+apache-airflow-providers-jdbc
+apache-airflow-providers-odbc
+boto3
+pandas

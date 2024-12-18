@@ -1,10 +1,9 @@
 from airflow.models.baseoperator import BaseOperator
 from airflow.hooks.base import BaseHook
-import pandas as pd
-
+import pandas as pd 
 
 class SeoulApiToCsvOperator(BaseOperator):
-    template_fields = ('endpoint', 'path', 'file_name', 'base_dt')
+    template_fields = ('endpoint', 'path','file_name','base_dt')
 
     def __init__(self, dataset_nm, path, file_name, base_dt=None, **kwargs):
         super().__init__(**kwargs)
@@ -16,7 +15,7 @@ class SeoulApiToCsvOperator(BaseOperator):
 
     def execute(self, context):
         import os
-
+        
         connection = BaseHook.get_connection(self.http_conn_id)
         self.base_url = f'http://{connection.host}:{connection.port}/{self.endpoint}'
 
@@ -40,7 +39,7 @@ class SeoulApiToCsvOperator(BaseOperator):
 
     def _call_api(self, base_url, start_row, end_row):
         import requests
-        import json
+        import json 
 
         headers = {'Content-Type': 'application/json',
                    'charset': 'utf-8',

@@ -1,3 +1,4 @@
+# Package Import
 from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
@@ -7,8 +8,7 @@ with DAG(
     dag_id='dags_trigger_dag_run_operator',
     start_date=pendulum.datetime(2023,4,1, tz='Asia/Seoul'),
     schedule='30 9 * * *',
-    catchup=False,
-    tags=["인프런", 'python', '트리거']
+    catchup=False
 ) as dag:
 
     start_task = BashOperator(
